@@ -1,0 +1,27 @@
+node_modules/
+dist/
+build/
+.svelte-kit/
+src-tauri/target/
+src-tauri/gen/
+*.log
+.env
+
+# AI tooling
+.claude/
+.gemini/
+.opencode/
+.openclaude/
+.playwright-mcp/
+.impeccable/
+
+# AI-generated project artifacts
+plan/
+stitch/
+docs/superpowers/
+
+# In-progress screenshots (regenerate before release)
+screenshots/
+
+# Product brief (kept local only)
+PRODUCT.md

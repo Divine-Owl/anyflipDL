@@ -1,0 +1,327 @@
+@import "tailwindcss";
+
+/*
+ * AnyflipDL design tokens.
+ *
+ * This file is the single source of truth for the visual system.
+ * No component CSS lives here. All values are exposed as CSS custom
+ * properties so component <style> blocks can reference them.
+ *
+ * Light mode is default. Dark mode is applied by setting
+ * [data-theme="dark"] on the root element. "System" mode is handled
+ * by AppLayout.svelte (it watches prefers-color-scheme and toggles
+ * the attribute at runtime).
+ */
+
+:root {
+  /* ─── Primary (cyan, softened, single accent) ─────────────────── */
+  --color-primary-50:  #f0fbfc;
+  --color-primary-100: #d5f3f6;
+  --color-primary-200: #a8e6ee;
+  --color-primary-300: #75d3df;
+  --color-primary-400: #3fbccc;
+  --color-primary-500: #1ba9b0;
+  --color-primary-600: #168a92;
+  --color-primary-700: #126c75;
+  --color-primary-800: #0e5057;
+  --color-primary-900: #093b40;
+
+  /* ─── Neutrals (cool gray) ───────────────────────────────────── */
+  --color-neutral-50:  #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+  --color-neutral-950: #020617;
+
+  /* ─── Semantic raw tokens (used by status system) ─────────────── */
+  --color-success:  #10b981;
+  --color-warning:  #f59e0b;
+  --color-error:    #ef4444;
+  --color-info:     #3b82f6;
+
+  /* ─── Status tokens (light) ──────────────────────────────────── */
+  --status-neutral-bg:     var(--color-neutral-100);
+  --status-neutral-text:   var(--color-neutral-600);
+  --status-active-bg:      var(--color-primary-50);
+  --status-active-text:    var(--color-primary-700);
+  --status-paused-bg:      #fff7e6;
+  --status-paused-text:    #b45309;
+  --status-success-bg:     #ecfdf5;
+  --status-success-text:   #047857;
+  --status-error-bg:       #fef2f2;
+  --status-error-text:     #b91c1c;
+  --status-offline-bg:     var(--color-neutral-100);
+  --status-offline-text:   var(--color-neutral-400);
+
+  /* ─── Surfaces (light) ───────────────────────────────────────── */
+  --color-background:        #ffffff;
+  --color-surface-base:      #ffffff;
+  --color-surface-raised:    #ffffff;
+  --color-surface-elevated:  #ffffff;
+  --color-surface-input:     #ffffff;
+  --color-surface-secondary: var(--color-neutral-100);
+  --color-surface-tertiary:  var(--color-neutral-200);
+
+  --color-text-primary:   #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted:     #94a3b8;
+  --color-text-inverse:   #ffffff;
+
+  --color-border:        #e2e8f0;
+  --color-border-subtle: #f1f5f9;
+  --color-border-strong: #cbd5e1;
+
+  /* ─── Shadow (light only — dark mode sets shadow-none) ───────── */
+  --shadow-whisper: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-none:    none;
+
+  /* ─── Accent aliases ─────────────────────────────────────────── */
+  --color-accent:        var(--color-primary-500);
+  --color-accent-hover:  var(--color-primary-600);
+  --color-accent-active: var(--color-primary-700);
+  --color-accent-soft:   var(--color-primary-50);
+
+  /* ─── Typography ─────────────────────────────────────────────── */
+  --font-family-sans: 'Inter', 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Cascadia Code', 'Consolas', ui-monospace, monospace;
+
+  /* ─── Type ramp ──────────────────────────────────────────────── */
+  --font-size-2xs: 12px;
+  --font-size-xs:  13px;
+  --font-size-sm:  15px;
+  --font-size-base: 16px;
+  --font-size-lg:  18px;
+  --font-size-xl:  22px;
+  --font-size-2xl: 28px;
+  --font-size-3xl: 36px;
+
+  --line-height-2xs: 16px;
+  --line-height-xs:  18px;
+  --line-height-sm:  22px;
+  --line-height-base: 24px;
+  --line-height-lg:  26px;
+  --line-height-xl:  30px;
+  --line-height-2xl: 34px;
+  --line-height-3xl: 42px;
+
+  --font-weight-regular:   400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+
+  --letter-tracking-tight:  -0.02em;
+  --letter-tracking-normal:  0;
+  --letter-tracking-wide:    0.08em;
+
+  /* ─── Spacing ────────────────────────────────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  32px;
+  --space-8:  40px;
+  --space-9:  48px;
+  --space-10: 64px;
+
+  /* ─── Radius ─────────────────────────────────────────────────── */
+  --radius-chip:    8px;
+  --radius-control: 12px;
+  --radius-card:    18px;
+  --radius-pill:    999px;
+
+  /* ─── Motion ─────────────────────────────────────────────────── */
+  --duration-instant: 0ms;
+  --duration-fast:    100ms;
+  --duration-base:    160ms;
+  --duration-slow:    240ms;
+  --ease-standard:    cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-emphasized:  cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ─── Buttons ────────────────────────────────────────────────── */
+  --btn-height-sm: 30px;
+  --btn-height-md: 36px;
+  --btn-height-lg: 42px;
+  --btn-radius: var(--radius-control);
+  --btn-min-width: 64px;
+
+  --btn-primary-bg:           var(--color-primary-500);
+  --btn-primary-bg-hover:     var(--color-primary-600);
+  --btn-primary-bg-active:    var(--color-primary-700);
+  --btn-primary-bg-disabled:  var(--color-neutral-200);
+  --btn-primary-text:         #ffffff;
+  --btn-primary-text-disabled: var(--color-neutral-400);
+
+  --btn-secondary-bg:           var(--color-neutral-100);
+  --btn-secondary-bg-hover:     var(--color-neutral-200);
+  --btn-secondary-bg-active:    var(--color-neutral-300);
+  --btn-secondary-text:         var(--color-text-primary);
+  --btn-secondary-border:       var(--color-border);
+
+  --btn-ghost-bg:          transparent;
+  --btn-ghost-bg-hover:    var(--color-neutral-100);
+  --btn-ghost-bg-active:   var(--color-neutral-200);
+  --btn-ghost-text:        var(--color-text-secondary);
+  --btn-ghost-text-hover:  var(--color-text-primary);
+
+  --btn-danger-bg:         var(--color-error);
+  --btn-danger-bg-hover:   #dc2626;
+  --btn-danger-bg-active:  #b91c1c;
+  --btn-danger-text:       #ffffff;
+
+  /* ─── Focus ring (single token, used everywhere) ─────────────── */
+  --focus-ring: 0 0 0 2px var(--color-primary-500);
+}
+
+[data-theme="dark"] {
+  --color-background:        #0f172a;
+  --color-surface-base:      #0f172a;
+  --color-surface-raised:    #1e293b;
+  --color-surface-elevated:  #334155;
+  --color-surface-input:     #1e293b;
+  --color-surface-secondary: var(--color-neutral-800);
+  --color-surface-tertiary:  var(--color-neutral-700);
+
+  --color-text-primary:   #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted:     #94a3b8;
+  --color-text-inverse:   #0f172a;
+
+  --color-border:        #334155;
+  --color-border-subtle: #1e293b;
+  --color-border-strong: #475569;
+
+  --shadow-whisper: none;
+  --shadow-none:    none;
+
+  --status-active-bg:      rgba(11, 78, 84, 0.45);
+  --status-active-text:    var(--color-primary-200);
+  --status-paused-bg:      #3a2a10;
+  --status-paused-text:    #fcd9a4;
+  --status-success-bg:     #04241c;
+  --status-success-text:   #6ee7b7;
+  --status-error-bg:       #2a1212;
+  --status-error-text:     #fca5a5;
+
+  --btn-secondary-bg:           var(--color-neutral-800);
+  --btn-secondary-bg-hover:     var(--color-neutral-700);
+  --btn-secondary-bg-active:    var(--color-neutral-600);
+  --btn-secondary-text:         var(--color-text-primary);
+
+  --btn-ghost-bg-hover:    var(--color-neutral-800);
+  --btn-ghost-bg-active:   var(--color-neutral-700);
+
+  --btn-primary-bg-disabled: var(--color-neutral-700);
+  --btn-primary-text-disabled: var(--color-neutral-500);
+
+  --focus-ring: 0 0 0 2px var(--color-primary-300);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  background: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+  letter-spacing: var(--letter-tracking-tight);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--color-primary-200);
+  color: var(--color-primary-900);
+}
+
+[data-theme="dark"] ::selection {
+  background: var(--color-primary-800);
+  color: var(--color-primary-100);
+}
+
+/*
+ * Overlay scrollbar — thin pill that respects rounded corners.
+ * Transparent track means the card's border-radius is the visible edge,
+ * so the thumb floats over the rounded corner instead of clipping it.
+ */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-neutral-300) transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-300);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neutral-400);
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+[data-theme="dark"] html {
+  scrollbar-color: var(--color-neutral-600) transparent;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-600);
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neutral-500);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

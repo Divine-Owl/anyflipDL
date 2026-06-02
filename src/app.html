@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AnyflipDL</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="%sveltekit.assets%/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="%sveltekit.assets%/favicon-64.png" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    %sveltekit.head%
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+    <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+    <script>
+      kofiWidgetOverlay.draw('divine_owl', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#00b9fe',
+        'floating-chat.donateButton.text-color': '#fff'
+      });
+    </script>
+  </body>
+</html>
