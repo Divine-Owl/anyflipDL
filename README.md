@@ -1,6 +1,6 @@
 # AnyflipDL
 
-![AnyflipDL Social Preview](screenshot/social-preview.png)
+![AnyflipDL Social Preview](social-preview.png)
 
 [![Tauri 2](https://img.shields.io/badge/Tauri-2-blue?logo=tauri)](https://tauri.app)
 [![Svelte 5](https://img.shields.io/badge/Svelte-5-orange?logo=svelte)](https://svelte.dev)
