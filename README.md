@@ -101,9 +101,8 @@ anyflipDL/
 
 ---
 
-<p align="center">If you find AnyflipDL useful, consider supporting me:</p>
 <p align="center">
   <a href="https://ko-fi.com/divine_owl">
-    <img src="https://img.shields.io/badge/Support%20me%20on%20Ko--fi-ff5e5b?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Support me on Ko-fi">
+    <img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi">
   </a>
 </p>
